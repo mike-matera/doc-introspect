@@ -1,2 +1,3 @@
-# doc-introspect
-An IPython Extension That Helps You Find Cells
+# Notebook Introspection 
+
+An IPython extension makes it possible to find cell contents and results. 
