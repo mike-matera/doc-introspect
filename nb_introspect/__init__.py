@@ -23,7 +23,8 @@ def result(expr):
     return get(expr).result
 
 def run(expr):
-    return get_ipython().run_cell(source(expr), store_history=True, silent=True)
+    return get_ipython() \
+        .run_cell(source(expr), store_history=False, silent=False).result
 
 def load_ipython_extension(ipython):
     global cache

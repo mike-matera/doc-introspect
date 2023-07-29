@@ -36,6 +36,5 @@ class CellCache:
             pass 
 
         for tag in tags:
-            print("Found tag:", tag)
             self._cache['by-tag'][tag] = result
         
