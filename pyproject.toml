@@ -1,6 +1,6 @@
 [project]
 name = "nb_introspect"
-version = "0.0.1"
+version = "0.1.0"
 dependencies = [
     'importlib-metadata; python_version<"3.8"',
 ]
@@ -8,3 +8,4 @@ dependencies = [
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+ 
