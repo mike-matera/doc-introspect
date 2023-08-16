@@ -19,6 +19,9 @@ def source(expr):
 def tree(expr):
     return ast.parse(get_ipython().transform_cell(source(expr)))
 
+def tokens(expr):
+    return (x.__class__ for x in ast.walk(ast.parse(get_ipython().transform_cell(source(expr)))))
+
 def result(expr):
     return get(expr).result
 

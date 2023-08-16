@@ -6,7 +6,7 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["nb_introspect"]
+where = ["."]
 
 [build-system]
 requires = ["setuptools"]
