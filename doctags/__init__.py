@@ -14,13 +14,16 @@ def get(expr):
     return cache.find(expr)
 
 def source(expr):
-    return get(expr).info.raw_cell
+    return get(expr).source
 
 def tree(expr):
-    return ast.parse(get_ipython().transform_cell(source(expr)))
+    return get(expr).tree
+
+def walk(expr):
+    return ast.walk(tree(expr))
 
 def tokens(expr):
-    return (x.__class__ for x in ast.walk(ast.parse(get_ipython().transform_cell(source(expr)))))
+    return (x.__class__ for x in walk(expr))
 
 def result(expr):
     return get(expr).result
@@ -31,7 +34,7 @@ def run(expr):
 
 def load_ipython_extension(ipython):
     global cache
-    cache = cellcache.CellCache(ipython)
+    cache = cellcache.CellCache()
     ipython.events.register('post_run_cell', cache.post_run_cell)
 
 def unload_ipython_extension(ipython):

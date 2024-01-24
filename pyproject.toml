@@ -1,6 +1,6 @@
 [project]
-name = "nb_introspect"
-version = "0.2.0"
+name = "doctags"
+version = "0.3.0"
 dependencies = [
     'importlib-metadata; python_version<"3.8"',
 ]
